@@ -10,12 +10,9 @@ def verificar_posicao(posicao):
 
 def marcar_posicao(jogador, posicao):
 	if(verificar_posicao(posicao)):
-		print('posicao escolhida: ', posicao)
 		posicoes_disponiveis.discard(posicao)
 		linha = int((posicao - 1) / 3)
-		print('linha escolhida: ', linha)
 		coluna = (posicao - 1) % 3
-		print('coluna escolhida: ', coluna)
 		if(jogador is Jogador.JOGADOR_1):
 			tabuleiro[linha][coluna] = 'O'
 		elif(jogador is Jogador.JOGADOR_2):
