@@ -1,5 +1,6 @@
 #!usr/bin/python3
 import jogo
+
 def main():
 	jogo.iniciar_jogo()
 	

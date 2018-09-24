@@ -1,4 +1,5 @@
-#!usr/bin/python3
+#!usr/bin/python
+from jogador import *
 def iniciar_tabuleiro_vazio():
 	tabuleiro_vazio = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
 	return tabuleiro_vazio
@@ -9,16 +10,19 @@ def verificar_posicao(posicao):
 
 def marcar_posicao(jogador, posicao):
 	if(verificar_posicao(posicao)):
+		print('posicao escolhida: ', posicao)
 		posicoes_disponiveis.discard(posicao)
 		linha = int((posicao - 1) / 3)
+		print('linha escolhida: ', linha)
 		coluna = (posicao - 1) % 3
-		if(jogador is Jogador.Jogador_1):
-			tabuleiro[linha, coluna] = 'O'
-		elif(jogador is Jogador.Jogador_2):
-			tabuleiro[linha, coluna] = 'X'
+		print('coluna escolhida: ', coluna)
+		if(jogador is Jogador.JOGADOR_1):
+			tabuleiro[linha][coluna] = 'O'
+		elif(jogador is Jogador.JOGADOR_2):
+			tabuleiro[linha][coluna] = 'X'
 		else:
 			print("Jogador invalido!!!")
-			return True
+		return True
 	else:
 		print("Posicao já ocupada! Escolha uma opcao disponivel.")
 		return False
